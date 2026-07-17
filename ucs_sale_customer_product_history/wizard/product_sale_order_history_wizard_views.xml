@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_product_sale_history_line_list" model="ir.ui.view">
+            <field name="name">product.sale.history.line.list</field>
+            <field name="model">product.sale.history.line</field>
+            <field name="arch" type="xml">
+                <list string="Price History Table" create="false" edit="false" delete="false">
+                    <field name="sale_order_id"/>
+                    <field name="history_price"/>
+                    <field name="history_qty"/>
+                    <field name="history_total"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_product_sale_history_oline_list" model="ir.ui.view">
+            <field name="name">product.sale.history.oline.list</field>
+            <field name="model">product.sale.history.oline</field>
+            <field name="arch" type="xml">
+                <list string="Price History Table for generic customer" create="false" edit="false" delete="false">
+                    <field name="partner_id"/>
+                    <field name="sale_order_id"/>
+                    <field name="history_price"/>
+                    <field name="history_qty"/>
+                    <field name="history_total"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="product_sale_order_history_view_form" model="ir.ui.view">
+            <field name="name">Product sale history</field>
+            <field name="model">product.sale.order.history</field>
+            <field name="arch" type="xml">
+                <form string="Product Sale History">
+                    <div>
+                        <field name="product_id" readonly="1"/>
+                        <field name="product_sale_history_ids" nolabel="1" readonly="1"
+                               context="{'list_view_ref': 'ucs_ucs_sale_customer_product_history.view_product_sale_history_line_list'}"/>
+                    </div>
+                    <separator string="Price History Table for generic customer"/>
+                    <div>
+                        <field name="product_sale_ohistory_ids" nolabel="1" readonly="1"
+                               context="{'list_view_ref': 'ucs_ucs_sale_customer_product_history.view_product_sale_history_oline_list'}"/>
+                    </div>
+
+                    <footer>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_sale_order_history_action" model="ir.actions.act_window">
+            <field name="name">Product sale history</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.sale.order.history</field>
+            <field name="view_id" ref="product_sale_order_history_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
