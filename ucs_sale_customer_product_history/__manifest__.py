@@ -18,7 +18,7 @@
         'views/sale_order_views.xml',
     ],
     'license': 'AGPL-3',
-    'images': ['static/description/banner.jpg'],
+    'images': ['static/description/banner.gif'],
     'installable': True,
     'auto_install': False,
     "price": 25,
