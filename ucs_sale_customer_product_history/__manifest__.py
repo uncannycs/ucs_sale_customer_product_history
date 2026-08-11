@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Sales History Of Products",
+    'name': 'Sales History | Product Sales History | Sales Tracking | Sales Management | Product Sales | Customer Sales | Sales Reports',
     'version': '19.0.1.0.0',
     'summary': """User can view The Sales history of The 
     products from Sales Order Line""",
@@ -17,7 +17,7 @@
         'wizard/stock_picking_wizard.xml',
         'views/sale_order_views.xml',
     ],
-    'license': 'AGPL-3',
+    'license': 'Other proprietary',
     'images': ['static/description/banner.gif'],
     'installable': True,
     'auto_install': False,
